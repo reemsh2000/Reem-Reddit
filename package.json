@@ -4,8 +4,9 @@
   "description": "week 08-project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/server.js"
+    "test": "NODE_ENV=testing jest ",
+   " start":"NODE_ENV=production node src/server.js",
+    "dev": "NODE_ENV=development nodemon src/server.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,8 @@
     "env2": "^2.2.2",
     "express": "^4.17.1",
     "joi": "^17.4.2",
-    "pg": "^8.7.1"
+    "pg": "^8.7.1",
+    "pool": "^0.4.1"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
