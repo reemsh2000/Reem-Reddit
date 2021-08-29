@@ -10,7 +10,7 @@ body{
 }
 .title{
   color: #1A1A1B;
-  padding: 7px;
+  padding: 10px;
 }
 /*  Header Style */
 header {
@@ -126,10 +126,11 @@ main{
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  color: #fff;
 }
 .card a{
  text-decoration: none;
- color: #000;
+ color: #fff;
 }
 /*Media query  */
 @media (max-width: 768px) {
@@ -147,5 +148,12 @@ main{
   }
   .btns {
     width:70%;
+  }
+  .top-container{
+    flex-direction: column;
+  }
+  .card{
+    width:80%;
+    margin: 10px auto;
   }
   }
