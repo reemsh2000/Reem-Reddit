@@ -13,6 +13,7 @@ body {
   color: #1a1a1b;
   padding: 10px;
   font-size: 18px;
+  margin-top: 10px;
 }
 /* **************************** Header Style********************************* */
 header {
@@ -219,7 +220,7 @@ background-color: #F6F7F8;
   width:30%;
 }
 .communities-near {
-  margin-left: 50px;
+  margin-left: 100px;
   background-color: #fff;
   display: flex;
   justify-content: space-evenly;
