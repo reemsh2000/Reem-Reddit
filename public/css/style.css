@@ -135,8 +135,8 @@ main {
 }
 /* ******************* Forms ******************* */
 .modal-content {
-  padding: 30px;
   display: flex;
+  padding: 25px;
 }
 .background {
   width: 20%;
