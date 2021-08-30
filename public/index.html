@@ -15,7 +15,7 @@
   </head>
   <body>
     <!--******************************* Header**************************** -->
-    <header>
+    <header id="top">
       <div class="title">
         <img src="./images/R.png" class="logo" />
         <h2>reddit</h2>
@@ -42,25 +42,30 @@
         <div class="background"></div>
         <div class="form-container">
           <span class="close">&times;</span>
-        <h4 class="form-title">Log In</h4>
-        <p>
-          By continuing, you agree to our User Agreement and Privacy Policy.
-        </p>
-        <form method="POST" action="/login" class="form">
-          <input type="text" placeholder="USERNAME" required name="username" />
-          <input
-            type="password"
-            placeholder="PASSWORD"
-            required
-            name="password"
-          />
-          <button type="submit">Log In</button>
+          <h4 class="form-title">Log In</h4>
           <p>
-            New to Reddit?
-            <span id="link-sign">SIGN UP</span>
+            By continuing, you agree to our User Agreement and Privacy Policy.
           </p>
-        </form>
-      </div>
+          <form method="POST" action="/login" class="form">
+            <input
+              type="text"
+              placeholder="USERNAME"
+              required
+              name="username"
+            />
+            <input
+              type="password"
+              placeholder="PASSWORD"
+              required
+              name="password"
+            />
+            <button type="submit">Log In</button>
+            <p>
+              New to Reddit?
+              <span id="link-sign">SIGN UP</span>
+            </p>
+          </form>
+        </div>
       </div>
     </div>
     <!--******************************* Sign up **************************** -->
@@ -71,35 +76,183 @@
       <div class="modal-content" id="sign">
         <div class="background"></div>
         <div class="form-container">
-        <span class="close">&times;</span>
-        <h4 class="form-title">Sign Up</h4>
-        <p>
-          By continuing, you agree to our User Agreement and Privacy Policy.
-        </p>
-        <form method="POST" action="/signup" class="form">
-          <input type="email" placeholder="Email" required name="email" />
-          <input type="text" placeholder="USERNAME" required name="username" />
-          <input
-            type="password"
-            placeholder="PASSWORD"
-            required
-            name="password"
-          />
-          <button type="submit">Sign up</button>
+          <span class="close">&times;</span>
+          <h4 class="form-title">Sign Up</h4>
           <p>
-            Already a redditor?
-            <span id="link-login">LOG IN</span>
+            By continuing, you agree to our User Agreement and Privacy Policy.
           </p>
-        </form>
+          <form method="POST" action="/signup" class="form">
+            <input type="email" placeholder="Email" required name="email" />
+            <input
+              type="text"
+              placeholder="USERNAME"
+              required
+              name="username"
+            />
+            <input
+              type="password"
+              placeholder="PASSWORD"
+              required
+              name="password"
+            />
+            <button type="submit">Sign up</button>
+            <p>
+              Already a redditor?
+              <span id="link-login">LOG IN</span>
+            </p>
+          </form>
         </div>
       </div>
     </div>
     <!--*******************************Body  **************************** -->
     <main>
-      <!---------------------- Top Cards---------------------------- -->
+      <!------------ Top Cards---------------- -->
       <section class="trending">
-        <h3 class="title">Trending today</h3>
+        <h3 class="title">Trending Today</h3>
         <div class="top-container"></div>
+      </section>
+      <!------------ Top Cards---------------- -->
+      <section class="popular-posts">
+        <h3 class="title">Popular Posts</h3>
+        <div class="popular-container">
+          <!-- Left Side   -->
+          <div class="posts">
+            <div class="item">
+              <button style="color: #0079d3;">
+                <i class="fab fa-hotjar"></i>
+                Hot
+              </button>
+              <button class="everywhere">
+                Everywhere
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <button>
+                <i class="fas fa-sun"></i>
+                New
+              </button>
+              <button>
+                Top
+                <i class="fas fa-chevron-up"></i>
+              </button>
+              <button>
+                <i class="fas fa-table"></i>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+          <!-- **************************** Right Side ********************************** -->
+          <div class="right">
+            <!-- ***********1******** -->
+            <div class="communities-near">
+              <h3 class="part-title">Communities Near You</h3>
+              <div class="item">
+                <span>1</span>
+                <img
+                  src="https://th.bing.com/th/id/OIP.hgaeMrZGp-Dvtq6L5S6aSwHaHa?w=198&h=198&c=7&r=0&o=5&pid=1.7"
+                  alt="palestine falg"
+                />
+                <p>r/Palestine</p>
+              </div>
+              <div class="item" style="border: none;">
+                <span>2</span>
+                <img
+                  src="https://th.bing.com/th/id/OIP.ZmKy0xU9ZHYQLNnrnR3orQHaHa?pid=ImgDet&rs=1"
+                  alt="Egypt falg"
+                />
+                <p>r/Egypt</p>
+              </div>
+              <button class="btn">View All</button>
+              <ul class="list">
+                <li>Top</li>
+                <li>News</li>
+                <li>Awww</li>
+                <li>Gaming</li>
+              </ul>
+            </div>
+            <!-- *********2*********** -->
+            <div class="communities-near">
+              <h3 class="part-title top-news">Top News Communities</h3>
+              <div class="item">
+                <span>1</span>
+                <i class="fas fa-chevron-up"></i>
+                <img
+                  src="https://i.pinimg.com/564x/95/9e/bc/959ebc02b7b88c12dc1bdd6e22334e35.jpg"
+                  alt="icon"
+                />
+              </div>
+              <div class="item">
+                <span>2</span>
+                <i class="fas fa-chevron-up"></i>
+                <img
+                  src="https://i.pinimg.com/564x/80/cb/19/80cb19f15f3d856151e9fdf2c8e2540e.jpg"
+                  alt="icon"
+                />
+              </div>
+              <div class="item">
+                <span>3</span>
+                <i class="fas fa-chevron-up"></i>
+                <img
+                  src="https://i.pinimg.com/564x/45/9e/d1/459ed100efebc7d6b9575ca98ad22078.jpg"
+                  alt="icon"
+                />
+              </div>
+              <div class="item">
+                <span>4</span>
+                <i class="fas fa-chevron-up"></i>
+                <img
+                  src="https://i.pinimg.com/236x/a1/a5/48/a1a548ac1852a7ca5c93b3ee1aaec1ae.jpg"
+                  alt="icon"
+                />
+              </div>
+              <div class="item" style="border: none;">
+                <span>5</span>
+                <i class="fas fa-chevron-up"></i>
+                <img
+                  src="https://i.pinimg.com/236x/ec/66/9c/ec669c071bdc1cca1586539e928f9640.jpg"
+                  alt="icon"
+                />
+              </div>
+              <button class="btn">View All</button>
+              <ul class="list">
+                <li>Top</li>
+                <li>News</li>
+                <li>Awww</li>
+                <li>Gaming</li>
+              </ul>
+            </div>
+            <!-- ********3**************** -->
+            <div class="communities-near ">
+              <div class=" lists">
+                <ul class='list-all'>
+                  <li>Help</li>
+                  <li>Reddit Coins</li>
+                  <li>Reddit Premium</li>
+                  <li>Reddit Gifts</li>
+                  <li>Communities</li>
+                  <li>Reddit Gifts</li>
+                  <li>Rereddit</li>
+                  <li>Topics</li>
+                </ul>
+
+              <ul class='list-all'>
+                <li>About</li>
+                <li>Careers</li>
+                <li>Press</li>
+                <li>Advertise</li>
+                <li>Communities</li>
+                <li>Terms</li>
+                <li>Content Policy</li>
+                <li>
+                  Privacy Policy
+                </li>
+                <li>Mod Policy</li>
+              </ul>
+            </div>
+            <p>Reddit Inc © 2021 . All rights reserved</p>
+            </div>
+          </div>
+          <!-- ********************************************** -->
+        </div>
       </section>
     </main>
 
