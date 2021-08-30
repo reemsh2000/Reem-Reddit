@@ -6,6 +6,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reem-Reddit</title>
     <link rel="icon" href="./images/R.png" />
+    <script
+      src="https://kit.fontawesome.com/81c816aea5.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/popup.css" />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
-  <body></body>
+  <body>
+    <!--******************************* Header**************************** -->
+    <header>
+      <div class="title">
+        <img src="./images/R.png" class="logo" />
+        <h2>reddit</h2>
+      </div>
+      <div class="search">
+        <i class="fas fa-search icon"></i>
+        <input type="text" placeholder="Search Reddit" id="serach-input" />
+      </div>
+      <div class="btns">
+        <!-- Trigger/Open The Modal -->
+        <button id="login">Log In</button>
+        <button id="signup">Sign Up</button>
+        <button id="user">
+          <i class="fas fa-user icon icon2"></i>
+          <i class="fas fa-chevron-down arrow"></i>
+        </button>
+      </div>
+    </header>
+    <!--******************************* login**************************** -->
+    <!-- LOGIN  The Modal -->
+    <div id="login-container" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="background"></div>
+        <div class="form-container">
+          <span class="close">&times;</span>
+        <h4 class="form-title">Log In</h4>
+        <p>
+          By continuing, you agree to our User Agreement and Privacy Policy.
+        </p>
+        <form method="POST" action="/login" class="form">
+          <input type="text" placeholder="USERNAME" required name="username" />
+          <input
+            type="password"
+            placeholder="PASSWORD"
+            required
+            name="password"
+          />
+          <button type="submit">Log In</button>
+          <p>
+            New to Reddit?
+            <span id="link-sign">SIGN UP</span>
+          </p>
+        </form>
+      </div>
+      </div>
+    </div>
+    <!--******************************* Sign up **************************** -->
+
+    <!-- Sign up model  -->
+    <div id="Signip-container" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content" id="sign">
+        <div class="background"></div>
+        <div class="form-container">
+        <span class="close">&times;</span>
+        <h4 class="form-title">Sign Up</h4>
+        <p>
+          By continuing, you agree to our User Agreement and Privacy Policy.
+        </p>
+        <form method="POST" action="/signup" class="form">
+          <input type="email" placeholder="Email" required name="email" />
+          <input type="text" placeholder="USERNAME" required name="username" />
+          <input
+            type="password"
+            placeholder="PASSWORD"
+            required
+            name="password"
+          />
+          <button type="submit">Sign up</button>
+          <p>
+            Already a redditor?
+            <span id="link-login">LOG IN</span>
+          </p>
+        </form>
+        </div>
+      </div>
+    </div>
+    <!--*******************************Body  **************************** -->
+    <main>
+      <!---------------------- Top Cards---------------------------- -->
+      <section class="trending">
+        <h3 class="title">Trending today</h3>
+        <div class="top-container"></div>
+      </section>
+    </main>
+
+    <script src="./js/popup.js"></script>
+    <script src="./js/topCard.js"></script>
+  </body>
 </html>
