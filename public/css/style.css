@@ -132,6 +132,54 @@ main{
  text-decoration: none;
  color: #fff;
 }
+/*  Forms  */
+.modal-content{
+  padding: 30px;
+  display: flex;
+  
+}
+.background{
+  width: 20%;
+  background-image: url('https://i.pinimg.com/564x/96/3a/78/963a783db437ccaed92343d9d24bb1da.jpg');
+}
+.form-container{
+  padding-left: 20px;
+}
+.form{
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+}
+.form-title{
+  font-size: 20px;
+  margin: 15px 0;
+}
+.modal-content p{ 
+  margin: 10px 0 40px 0;
+}
+.form input ,.form button {
+  width:65%;
+  height: 45px;
+  padding: 10px;
+  border-radius: 5px;
+  border:1px solid #e5e5e5;
+  margin:15px 0;
+}
+.form input:hover{
+  border:1px solid #0079D3;
+}
+.form button{
+  border:none;
+  border-radius: 20px;
+  background-color: #0079D3;
+  color:#fff;
+  font-size: 20px;
+  font-weight: bold;
+}
+#link-sign,#link-login{
+  cursor: pointer;
+  color: #0079D3;
+}
 /*Media query  */
 @media (max-width: 768px) {
   .btns button {
