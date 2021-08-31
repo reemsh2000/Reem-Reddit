@@ -1,20 +1,25 @@
-const { checkUserExsit } = require('../database/queies');
+/* eslint-disable no-console */
+const { join } = require('path');
+const { getUserInfo } = require('../database/queies');
 const { comparePasswords } = require('../utilities');
 
 const login = (req, res) => {
-  checkUserExsit(req.body.username)
-    .then((exist) => {
-      if (exist.rows[0].exists) {
-        comparePasswords(req.body.password, result.rows[0].user_password, (err, resu) => {
-          if (err) {
-            res.status(404).json({ msg: `error in passs ${err}` });
-          } else {
-            res.json({ msg: `hiii ${resu}` });
-          }
+  getUserInfo(req.body.username)
+    .then((result) => {
+      console.log(req.body.password);
+      console.log(result.rows[0].user_password);
+      if (result.rows.length === 1) {
+        comparePasswords(req.body.password, result.rows[0].user_password).then((resu) => {
+          res.sendFile(join(__dirname, '..', '..', 'public', 'html', 'home.html'));
         });
       }
     })
-    .catch((error) => res.json({ msg: `user not a member ${error}` }).redirect('/'));
+
+    .catch((error) => {
+      console.log(error);
+      res.json({ msg: `user not a member ${error}` });
+    });
+  // .redirect('/'));
 };
 
 module.exports = login;
