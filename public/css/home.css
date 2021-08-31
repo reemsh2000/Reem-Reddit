@@ -1,0 +1,33 @@
+.create-post{
+    margin: 15px 0;
+}
+.creating-post{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.creating-post input{
+    width:80%;
+    height: 30px;
+    border: none;
+    margin: 7px;
+    background-color: #f5f3f3;
+    border: 1px solid #b3b3b3;
+    padding: 10px;
+    border-radius: 3px;
+}
+.creating-post input:hover{
+    background-color: #fff;
+}
+.creating-post  i:hover{
+    background-color: #fff;
+}
+i{
+    margin: 5px;
+}
+.title{
+    margin: 0;
+}
+.search {
+    width: 30%;
+}
