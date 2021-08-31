@@ -1,9 +1,11 @@
 const getUserInfo = require('./getUserInfo');
 const getComments = require('./getCommensts');
-const inserUser = require('./insertUser');
+const insertUser = require('./insertUser');
+const checkUserExsit = require('./checkUserExsit');
 
 module.exports = {
   getUserInfo,
   getComments,
-  inserUser,
+  insertUser,
+  checkUserExsit,
 };
