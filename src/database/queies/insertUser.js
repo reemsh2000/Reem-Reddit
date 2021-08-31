@@ -12,4 +12,5 @@ const inserUser = (username, email, password) => {
       return connection.query(sql);
     });
 };
+// inserUser('lina','l@gmail.com','123456');
 module.exports = inserUser;
