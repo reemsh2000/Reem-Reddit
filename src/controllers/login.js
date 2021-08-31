@@ -1,39 +1,25 @@
-const bcrypt = require('bcryptjs');
-// eslint-disable-next-line no-unused-vars
-const jwt = require('jsonwebtoken');
-const getUserInfo = require('../database/queies/getUserInfo');
-const { comparePasswords } = require('../utilities/hashPassword');
-// eslint-disable-next-line no-unused-vars
+/* eslint-disable no-console */
+const { join } = require('path');
+const { getUserInfo } = require('../database/queies');
+const { comparePasswords } = require('../utilities');
+
 const login = (req, res) => {
   getUserInfo(req.body.username)
     .then((result) => {
-      // if (result.rows.length > 0) {
-      console.log(typeof req.body.password);
+      console.log(req.body.password);
       console.log(result.rows[0].user_password);
-      comparePasswords(req.body.password, result.rows[0].user_password, (err, resu) => {
-        if (err) {
-          res.status(404).json({ msg: `error in passs ${err}` });
-        // eslint-disable-next-line no-console
-        } else {
-          console.log(` ${resu}`);
-          res.json({ msg: `hiii ${resu}` });
-        }
-      });
-      //       .then((success) => {
-      //         console.log(success);
-      //         // if (success) {
-      //         //   jwt.sign(req.body.username, process.env.SECRET, (error, token) => {
-      //         //     if (token) {
-      //         //       res.cookie('name', token).redirect('/');
-      //         //     }
-      //         //   });
-      //         // }
-      // console.log(result);
+      if (result.rows.length === 1) {
+        comparePasswords(req.body.password, result.rows[0].user_password).then((resu) => {
+          res.sendFile(join(__dirname, '..', '..', 'public', 'html', 'home.html'));
+        });
+      }
     })
-  //  }
 
-  // })
-    .catch((error) => res.json({ msg: `username must be uniqe ${error}` }).redirect('/'));
+    .catch((error) => {
+      console.log(error);
+      res.json({ msg: `user not a member ${error}` });
+    });
+  // .redirect('/'));
 };
 
 module.exports = login;
