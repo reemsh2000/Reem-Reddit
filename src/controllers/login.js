@@ -8,8 +8,8 @@ const login = (req, res) => {
       if (result.rows.length === 1) {
         comparePasswords(req.body.password, result.rows[0].user_password).then((resu) => {
           if (resu) {
-            setCookie(res, req.body.username, true);
-            res.sendFile(join(__dirname, '..', '..', 'public', 'html', 'home.html'));
+            setCookie(res, req.body.username, true)
+            res.redirect('/home');
           }
         });
       }
