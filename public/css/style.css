@@ -15,6 +15,9 @@ button,a,#link-login,#link-sign{
 a{
   text-decoration: none;
 }
+img{
+  margin: 5px;
+}
 .title {
   color: #1a1a1b;
   padding: 10px;
@@ -271,13 +274,22 @@ background-color: #F6F7F8;
   font-size: 18px;
   background-color: #F8F9FA;
 }
+.vote span{
+  margin-left: 14px;
+}
 .post-container .post{
   width:90%;
 }
 .comments{
  padding: 5px;
+ display: flex;
+ justify-content: space-evenly;
+ align-items: center;
+ color: #807d7d;
+ background-color: #fff;
+
 }
-.comments #show-comments{
+.comments #show-comments,.comments a{
    background-color: #fff;
    border: none;
    font-size: 17px;
