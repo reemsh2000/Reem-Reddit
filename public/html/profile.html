@@ -12,6 +12,11 @@
     ></script>
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/home.css" />
+    <style>
+      .posts{
+        width:100%;
+      }
+    </style>
   </head>
   <body>
       <!--******************************* Header**************************** -->
@@ -37,12 +42,48 @@
       <!--*******************************Body  **************************** -->
       <main>
        <!-- **************************** Left  Side ********************************** -->
-       <div class='posts'>
+       <section>
+        <div class="popular-container">
+          
+       <div class="posts" id="post-contain">
+          <div class="posts">
+            <form class="creating-post item" action="/post" method="POST">
+              <img src="../images/R.png" alt="reddit" class="logo" />
+              <input type="text" placeholder="Create Post" name="postContent" />
+              <input type="text" placeholder="Enter img link" name="imgLink" />
+              <button type="submit"><i class="fas fa-plus"></i></button>
+            </form>
+          </div>
+        <div class="item">
+          <button style="color: #0079d3">
+            <i class="fab fa-hotjar"></i>
+            Hot
+          </button>
+          <button class="everywhere">
+            Everywhere
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <button>
+            <i class="fas fa-sun"></i>
+            New
+          </button>
+          <button>
+            Top
+            <i class="fas fa-chevron-up"></i>
+          </button>
+          <button>
+            <i class="fas fa-table"></i>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
 
-       </div>
+        <!-- ****************************************  -->
+        <!-- POSTS WILL APPEA HERE  -->
+      </div>
        <!-- **************************** Right Side ********************************** -->
        <div class="right">
         <div class="communities-near">
+       <!-- User info  -->
           </div>
         <!-- ***********1******** -->
         <div class="communities-near">
@@ -153,8 +194,10 @@
           <p>Reddit Inc © 2021 . All rights reserved</p>
         </div>
       </div>
+      </div>
+    </section>
 </main>
-    <script src="../js/profileHandler.js"></script>
+    <script src="../js/handlePost.js"></script>
     <script src="../js/profileHandler.js"></script>
   </body>
 </html>
