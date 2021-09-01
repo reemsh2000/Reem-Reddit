@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 const { join } = require('path');
 const { getUserInfo } = require('../database/queies');
 const { comparePasswords, setCookie } = require('../utilities');
@@ -17,7 +16,6 @@ const login = (req, res) => {
     })
 
     .catch((error) => {
-      console.log(error);
       res.json({ msg: `user not a member ${error}` });
     });
 };
