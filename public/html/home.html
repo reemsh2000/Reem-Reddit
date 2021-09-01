@@ -26,11 +26,16 @@
       </div>
       <div class="btns">
         <!-- Trigger/Open The Modal -->
-        <button id="home"> <i class="fas fa-home"></i> Home </button>
+        <button id="home">
+          <i class="fas fa-home"></i>
+          Home
+        </button>
         <a class="logout" href="/logout">Log Out</a>
-        <button id="user">
-          <a href="/profile"><i class="fas fa-user icon icon2"></i></a>
-          <i class="fas fa-chevron-down arrow"></i>
+        <button id="user fetch-profile">
+          <a href="/profile/:username">
+            <i class="fas fa-user icon icon2"></i>
+            <i class="fas fa-chevron-down arrow"></i>
+          </a>
         </button>
       </div>
     </header>
@@ -39,12 +44,12 @@
       <!------------ Create post---------------- -->
       <section class="create-post">
         <div class="posts">
-        <form class='creating-post item' action="/post" method="POST">
-            <img src='../images/R.png' alt='reddit' class="logo">
-            <input type="text" placeholder="Create Post" name='postContent'>
-            <input type="text" placeholder="Enter img link" name='imgLink'>
+          <form class="creating-post item" action="/post" method="POST">
+            <img src="../images/R.png" alt="reddit" class="logo" />
+            <input type="text" placeholder="Create Post" name="postContent" />
+            <input type="text" placeholder="Enter img link" name="imgLink" />
             <button type="submit"><i class="fas fa-plus"></i></button>
-            </form>
+          </form>
         </div>
       </section>
       <!------------ popular-posts---------------- -->
@@ -52,9 +57,9 @@
         <h3 class="title">Popular Posts</h3>
         <div class="popular-container">
           <!-- Left Side   -->
-          <div class="posts" id='post-contain'>
+          <div class="posts" id="post-contain">
             <div class="item">
-              <button style="color: #0079d3;">
+              <button style="color: #0079d3">
                 <i class="fab fa-hotjar"></i>
                 Hot
               </button>
@@ -76,7 +81,7 @@
               </button>
             </div>
             <!-- ****************************************  -->
-              <!-- POSTS WILL APPEA HERE  -->
+            <!-- POSTS WILL APPEA HERE  -->
           </div>
           <!-- **************************** Right Side ********************************** -->
           <div class="right">
@@ -91,7 +96,7 @@
                 />
                 <p>r/Palestine</p>
               </div>
-              <div class="item" style="border: none;">
+              <div class="item" style="border: none">
                 <span>2</span>
                 <img
                   src="https://th.bing.com/th/id/OIP.ZmKy0xU9ZHYQLNnrnR3orQHaHa?pid=ImgDet&rs=1"
@@ -142,7 +147,7 @@
                   alt="icon"
                 />
               </div>
-              <div class="item" style="border: none;">
+              <div class="item" style="border: none">
                 <span>5</span>
                 <i class="fas fa-chevron-up"></i>
                 <img
@@ -180,9 +185,7 @@
                   <li>Communities</li>
                   <li>Terms</li>
                   <li>Content Policy</li>
-                  <li>
-                    Privacy Policy
-                  </li>
+                  <li>Privacy Policy</li>
                   <li>Mod Policy</li>
                 </ul>
               </div>
@@ -193,6 +196,7 @@
         </div>
       </section>
     </main>
-    <script src="../js/handlePost.js"></script>
+    <script src="../js/profileHandler.js"></script>
+    <script src="../js/fetchPosts.js"></script>
   </body>
 </html>

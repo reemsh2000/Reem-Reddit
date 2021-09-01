@@ -54,6 +54,7 @@ const createCards = (postContent, postTime, username, picture, votes, postImage,
   // addComment.href('/add-comment')
 };
 // Create Post
+// eslint-disable-next-line no-unused-vars
 const createPosts = (array) => {
   for (let i = 0; i < array.length; i += 1) {
     createCards(array[i].post_content,
@@ -64,11 +65,3 @@ const createPosts = (array) => {
       array[i].post_img);
   }
 };
-// Fetch posts
-const fetchPost = () => {
-  fetch('/posts')
-    .then((res) => res.json())
-    .then((result) => createPosts(result))
-    .catch((error) => error);
-};
-fetchPost();
