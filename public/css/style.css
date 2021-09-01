@@ -12,6 +12,9 @@ body {
 button,a,#link-login,#link-sign{
   cursor: pointer;
 }
+a{
+  text-decoration: none;
+}
 .title {
   color: #1a1a1b;
   padding: 10px;
@@ -237,12 +240,13 @@ background-color: #F6F7F8;
   align-items: center;
   padding: 10px;
   justify-content: space-evenly;
-  width:45%;
+  width:65%;
 }
 .post .user img{
   width:25px;
   height: 25px;
   margin: 10px;
+  border-radius: 15px;
 }
 .post-container .post .new{
   margin-top: 10px;
@@ -260,7 +264,7 @@ background-color: #F6F7F8;
   flex-direction: column;
   align-items: center;
 }
-.vote button{
+.vote a{
   width:18px;
   border:none;
   color:#6e6a6a;
@@ -273,15 +277,15 @@ background-color: #F6F7F8;
 .comments{
  padding: 5px;
 }
-.comments #show-comments,.comments span,.comments i{
+.comments #show-comments{
    background-color: #fff;
    border: none;
    font-size: 17px;
    color: #807d7d;
+   display: flex;
+   align-items: center;
 }
-.comments i{
-  margin:  0 0 0 20px;
-}
+
 /* Right Side  */
 .right{
   width:30%;
