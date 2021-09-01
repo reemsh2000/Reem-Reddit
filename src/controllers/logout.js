@@ -1,7 +1,7 @@
+const { clearCookie } = require('../utilities');
+
 const logout = (req, res) => {
-  res.clearCookie('token');
-  res.clearCookie('logedIn');
-  res.clearCookie('username');
+  clearCookie(res);
   res.redirect('/');
 };
 module.exports = logout;
