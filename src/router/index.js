@@ -3,10 +3,6 @@ const {
   login, logout, signup, getHomePage, getIndexPage, getProfilePage, getPosts, addPost,
 } = require('../controllers');
 
-router.use('/', (req, res, next) => {
-  console.log(req.method, req.path);
-  next();
-});
 router.get('/', getIndexPage);
 router.post('/login', login);
 router.post('/signup', signup);

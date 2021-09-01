@@ -14,7 +14,7 @@ const signup = (req, res, next) => {
               .then((hash) => {
                 insertUser(req.body.username, req.body.email, hash);
                 setCookie(res, req.body.username, true);
-                next();
+                res.redirect('/home');
               })
               .catch((error) => res.json({ msg: `there is error here in hash ${error}` }));
           }
