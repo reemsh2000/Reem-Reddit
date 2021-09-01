@@ -1,5 +1,5 @@
 const { insertUser, checkUserExsit } = require('../database/queies');
-const { signupValidation, hashPassword } = require('../utilities');
+const { signupValidation, hashPassword, setCookie } = require('../utilities');
 // eslint-disable-next-line no-unused-vars
 const signup = (req, res, next) => {
   signupValidation.validateAsync(req.body)
@@ -13,6 +13,7 @@ const signup = (req, res, next) => {
             hashPassword(req.body.password)
               .then((hash) => {
                 insertUser(req.body.username, req.body.email, hash);
+                setCookie(res, req.body.username, true);
                 next();
               })
               .catch((error) => res.json({ msg: `there is error here in hash ${error}` }));
