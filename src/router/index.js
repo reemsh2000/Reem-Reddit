@@ -11,6 +11,7 @@ router.get('/logout', logout);
 router.get('/home', getHomePage);
 router.get('/profile', getProfilePage);
 router.get('/profile/:username', getProfilePage);
+router.get('/profile/:username/info', getProfileInfo);
 router.get('/posts', getPosts);
 router.post('/post', addPost);
 module.exports = router;
