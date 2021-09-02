@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const {
-  login, logout, signup, getHomePage, getIndexPage, getProfilePage, getPosts, addPost,
+  login, logout, signup, getHomePage, getIndexPage,
+  getProfileInfo, getPosts, addPost, getProfilePage,
 } = require('../controllers');
 
 router.get('/', getIndexPage);

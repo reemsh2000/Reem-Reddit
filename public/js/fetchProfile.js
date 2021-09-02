@@ -1,7 +1,12 @@
 // const fetchProfileBtn = document.querySelector('.fetch-profile');
-// const cookieArr = document.cookie.split(';');
-
+// // eslint-disable-next-line consistent-return
+// const getCookie = (name) => {
+//   const value = `; ${document.cookie}`;
+//   const parts = value.split(`; ${name}=`);
+//   if (parts.length === 2) return parts.pop().split(';').shift();
+// };
+// const user = getCookie('username');
 // const fetchProfile = () => {
-//   fetch(`/profile/:${cookieArr[1].split('=')[2]}`);
+//   fetch(`/profile/:${user}`);
 // };
 // fetchProfileBtn.addEventListener('click', fetchProfile);

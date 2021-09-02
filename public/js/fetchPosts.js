@@ -1,7 +1,13 @@
 const postsContainer = document.querySelector('#post-contain');
 const profileLink = document.querySelector('#profile-link');
-const cookieArr = document.cookie.split(';');
-profileLink.href += `/:${cookieArr[2].split('=')[1]}`;
+// eslint-disable-next-line consistent-return
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+}
+const user = getCookie('username');
+profileLink.href += `/${user}`;
 
 const generateElement = (tag, parentNode, className) => {
   const tagName = document.createElement(tag);

@@ -56,10 +56,15 @@ const createCards = (postContent, postTime, username, picture, votes, postImage,
   // addComment.textContent='add Comment';
   // addComment.href('/add-comment')
 };
-
+// eslint-disable-next-line consistent-return
+// const getCookie = (name) => {
+//   const value = `; ${document.cookie}`;
+//   const parts = value.split(`; ${name}=`);
+//   if (parts.length === 2) return parts.pop().split(';').shift();
+// };
 const createProfilePosts = (array) => {
   for (let i = 0; i < array.length; i += 1) {
-    if (array[i].username === currentLocation.split(':')[3]) {
+    if (array[i].username === currentLocation.split('/')[4]) {
       createCards(array[i].post_content,
         array[i].post_time,
         array[i].username,

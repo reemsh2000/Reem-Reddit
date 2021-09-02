@@ -3,9 +3,10 @@ const login = require('./login');
 const logout = require('./logout');
 const signup = require('./signup');
 const getIndexPage = require('./getIndexPage');
-const getProfilePage = require('./getProfilePage');
+const getProfileInfo = require('./getProfileInfo');
 const getPosts = require('./getPosts');
 const addPost = require('./addPost');
+const getProfilePage = require('./getProfilePage');
 
 module.exports = {
   getHomePage,
@@ -13,7 +14,8 @@ module.exports = {
   logout,
   signup,
   getIndexPage,
-  getProfilePage,
+  getProfileInfo,
   getPosts,
   addPost,
+  getProfilePage,
 };
