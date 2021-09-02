@@ -7,7 +7,7 @@ CREATE TABLE USERS (
     USERNAME VARCHAR(25) UNIQUE,
     EMAIL TEXT NOT NULL,
     USER_PASSWORD TEXT NOT NULL,
-    PICTURE TEXT DEFAULT 'https://i.ytimg.com/vi/_TlMuBgyXG4/maxresdefault.jpg'
+    PICTURE TEXT DEFAULT 'https://i.pinimg.com/originals/a3/9c/1e/a39c1e2636f0f319bc4a46d06ebed079.jpg'
 );
 CREATE TABLE POSTS (
     ID SERIAL PRIMARY KEY,

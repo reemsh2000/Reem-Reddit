@@ -1,5 +1,4 @@
 const connection = require('../config/connection');
-const { hashPassword } = require('../../utilities/hashPassword');
 
 const inserUser = (username, email, password) => {
   const sql = {

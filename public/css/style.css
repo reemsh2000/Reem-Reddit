@@ -263,9 +263,10 @@ main {
   font-size: 18px;
   padding: 10px;
 }
-.post-container .post .post-img {
+.post-container .post .post-img,#profile-info img {
   width: 250px;
   height: 250px;
+  border-radius: 7px;
 }
 .post-container .vote {
   width: 10%;

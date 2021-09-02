@@ -1,7 +1,13 @@
 const postsContainer = document.querySelector('#post-contain');
 const profileLink = document.querySelector('#profile-link');
-const cookieArr = document.cookie.split(';');
-profileLink.href += `/:${cookieArr[2].split('=')[1]}`;
+// eslint-disable-next-line consistent-return
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+}
+const user = getCookie('username');
+profileLink.href += `/${user}`;
 
 const generateElement = (tag, parentNode, className) => {
   const tagName = document.createElement(tag);
@@ -11,7 +17,7 @@ const generateElement = (tag, parentNode, className) => {
 };
 
 // eslint-disable-next-line max-len
-const createCards = (postContent, postTime, username, picture, votes, postImage, notmemberAccount) => {
+const createCards = (postContent, postTime, username, picture, votes, postImage, memberAccount) => {
   const post = generateElement('div', postsContainer, 'post-container');
   const votesContainer = generateElement('div', post, 'vote');
   const topIconBtn = generateElement('a', votesContainer, 'ele');
@@ -47,7 +53,7 @@ const createCards = (postContent, postTime, username, picture, votes, postImage,
   commentLink.textContent = 'Comments';
   const commentIscon = generateElement('img', commentLink, 'ele');
   commentIscon.src = '../icons/comment.svg';
-  if (!notmemberAccount) {
+  if (memberAccount) {
     const deletePost = generateElement('a', commentsContainer, 'ele');
     deletePost.textContent = 'Delete Post';
     deletePost.href = '/delete-post';
@@ -66,7 +72,8 @@ const createPosts = (array) => {
       array[i].username,
       array[i].picture,
       array[i].votes,
-      array[i].post_img);
+      array[i].post_img,
+      user === array[i].username);
   }
 };
 

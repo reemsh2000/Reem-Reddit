@@ -52,14 +52,14 @@ const createCards = (postContent, postTime, username, picture, votes, postImage,
     const delIscon = generateElement('img', deletePost, 'ele');
     delIscon.src = '../icons/remove.svg';
   }
-  // const addComment = generateElement('a', commentsContainer, 'ele');
-  // addComment.textContent='add Comment';
-  // addComment.href('/add-comment')
+  const addComment = generateElement('a', commentsContainer, 'ele');
+  addComment.textContent = 'add Comment';
+  addComment.href = '/add-comment';
 };
 
 const createProfilePosts = (array) => {
   for (let i = 0; i < array.length; i += 1) {
-    if (array[i].username === currentLocation.split(':')[3]) {
+    if (array[i].username === currentLocation.split('/')[4]) {
       createCards(array[i].post_content,
         array[i].post_time,
         array[i].username,

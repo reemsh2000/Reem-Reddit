@@ -6,6 +6,7 @@ const getPostsQuery = require('./getPosts');
 const insertPost = require('./insertPost');
 const insertComment = require('./insertComment');
 const getId = require('./getId');
+const updateUser = require('./updateUser');
 
 module.exports = {
   getUserInfo,
@@ -16,4 +17,5 @@ module.exports = {
   insertPost,
   insertComment,
   getId,
+  updateUser,
 };
