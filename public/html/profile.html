@@ -16,6 +16,7 @@
       .posts{
         width:100%;
       }
+      
     </style>
   </head>
   <body>
@@ -42,6 +43,11 @@
         <div class="popular-container">
           
        <div class="posts" id="post-contain">
+         <div class='user-info  '>
+           <h2 class="title">Profile Information </h2>
+         <form method="POST" action='/update-profile' id="profile-info" class=""></form>
+        </div>
+        <!-- posts  -->
           <div class="posts">
             <form class="creating-post item" action="/post" method="POST">
               <img src="../images/R.png" alt="reddit" class="logo" />
@@ -78,9 +84,6 @@
       </div>
        <!-- **************************** Right Side ********************************** -->
        <div class="right">
-        <div class="communities-near">
-       <!-- User info  -->
-          </div>
         <!-- ***********1******** -->
         <div class="communities-near">
           <h3 class="part-title">Communities Near You</h3>
@@ -194,7 +197,7 @@
     </section>
 </main>
 
-    <script src="../js/userProfilePosts.js"></script>
-    <script src="../js/fetchProfile.js"></script>
+<script src="../js/userProfilePosts.js"></script>
+<script src="../js/fetchProfile.js"></script>
   </body>
 </html>

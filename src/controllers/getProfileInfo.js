@@ -1,4 +1,6 @@
 const { getUserInfo } = require('../database/queies');
+const verifyLogin = require('./verifyLogin');
+// verifyLogin
 
 const getProfileInfo = (req, res) => {
   getUserInfo(req.params.username)

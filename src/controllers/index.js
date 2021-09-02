@@ -7,6 +7,7 @@ const getProfileInfo = require('./getProfileInfo');
 const getPosts = require('./getPosts');
 const addPost = require('./addPost');
 const getProfilePage = require('./getProfilePage');
+const updateProfile = require('./updateProfile');
 
 module.exports = {
   getHomePage,
@@ -18,4 +19,5 @@ module.exports = {
   getPosts,
   addPost,
   getProfilePage,
+  updateProfile,
 };

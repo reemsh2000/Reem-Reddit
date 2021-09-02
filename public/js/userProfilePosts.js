@@ -52,9 +52,9 @@ const createCards = (postContent, postTime, username, picture, votes, postImage,
     const delIscon = generateElement('img', deletePost, 'ele');
     delIscon.src = '../icons/remove.svg';
   }
-  // const addComment = generateElement('a', commentsContainer, 'ele');
-  // addComment.textContent='add Comment';
-  // addComment.href('/add-comment')
+  const addComment = generateElement('a', commentsContainer, 'ele');
+  addComment.textContent = 'add Comment';
+  addComment.href = '/add-comment';
 };
 
 const createProfilePosts = (array) => {
