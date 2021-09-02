@@ -1,4 +1,6 @@
 const postsContainer = document.querySelector('#post-contain');
+const currentLocation = window.location.href;
+
 const generateElement = (tag, parentNode, className) => {
   const tagName = document.createElement(tag);
   tagName.classList.add(className);
@@ -25,7 +27,8 @@ const createCards = (postContent, postTime, username, picture, votes, postImage,
   const userImg = generateElement('img', userInfo, 'ele');
   userImg.src = picture;
   userImg.alt = 'user image';
-  const userName = generateElement('p', userInfo, 'ele');
+  const userName = generateElement('a', userInfo, 'ele');
+  userName.href = `/profile:${username}`;
   userName.textContent = username;
   const postDate = generateElement('span', userInfo, 'ele');
   postDate.textContent = `${postTime.split('T')[0]}  ${postTime.split('T')[1].split('.')[0]}`;
@@ -54,12 +57,9 @@ const createCards = (postContent, postTime, username, picture, votes, postImage,
   // addComment.href('/add-comment')
 };
 
-const currentLocation = window.location.href;
-// console.log(currentLocation);
-const cookieArr = document.cookie.split(';');
 const createProfilePosts = (array) => {
   for (let i = 0; i < array.length; i += 1) {
-    if (array[i].username === cookieArr[1].split('=')[1]) {
+    if (array[i].username === currentLocation.split(':')[3]) {
       createCards(array[i].post_content,
         array[i].post_time,
         array[i].username,
@@ -70,7 +70,6 @@ const createProfilePosts = (array) => {
     }
   }
 };
-
 
 const fetchUserPost = () => {
   fetch('/posts')
