@@ -5,7 +5,7 @@ const createElement = (tag, parentNode) => {
   return tagName;
 };
 // eslint-disable-next-line no-unused-vars
-const createCards = (title, news, imgUrl) => {
+const createTopCards = (title, news, imgUrl) => {
   const card = createElement('div', cardsContainer);
   card.classList.add('card');
   card.style.backgroundImage = `url(${imgUrl})`;
@@ -17,7 +17,7 @@ const createCards = (title, news, imgUrl) => {
   a.textContent = 'Read More';
   a.href = '/';
 };
-createCards('Jake Paul', 'Someone (Tyron Woolley) finally put Jake Paul in his place', 'https://th.bing.com/th/id/R.eec27d550216388b430561d06d76f143?rik=aVSv3VIADVmSTA&pid=ImgRaw&r=0');
-createCards('Jake Paul', 'Someone (Tyron Woolley) finally put Jake Paul in his place', 'https://th.bing.com/th/id/R.eec27d550216388b430561d06d76f143?rik=aVSv3VIADVmSTA&pid=ImgRaw&r=0');
-createCards('Jake Paul', 'Someone (Tyron Woolley) finally put Jake Paul in his place', 'https://th.bing.com/th/id/R.eec27d550216388b430561d06d76f143?rik=aVSv3VIADVmSTA&pid=ImgRaw&r=0');
-createCards('Jake Paul', 'Someone (Tyron Woolley) finally put Jake Paul in his place', 'https://th.bing.com/th/id/R.eec27d550216388b430561d06d76f143?rik=aVSv3VIADVmSTA&pid=ImgRaw&r=0');
+createTopCards('Jake Paul', 'Someone (Tyron Woolley) finally put Jake Paul in his place', 'https://th.bing.com/th/id/R.eec27d550216388b430561d06d76f143?rik=aVSv3VIADVmSTA&pid=ImgRaw&r=0');
+createTopCards('Jake Paul', 'Someone (Tyron Woolley) finally put Jake Paul in his place', 'https://th.bing.com/th/id/R.eec27d550216388b430561d06d76f143?rik=aVSv3VIADVmSTA&pid=ImgRaw&r=0');
+createTopCards('Jake Paul', 'Someone (Tyron Woolley) finally put Jake Paul in his place', 'https://th.bing.com/th/id/R.eec27d550216388b430561d06d76f143?rik=aVSv3VIADVmSTA&pid=ImgRaw&r=0');
+createTopCards('Jake Paul', 'Someone (Tyron Woolley) finally put Jake Paul in his place', 'https://th.bing.com/th/id/R.eec27d550216388b430561d06d76f143?rik=aVSv3VIADVmSTA&pid=ImgRaw&r=0');
