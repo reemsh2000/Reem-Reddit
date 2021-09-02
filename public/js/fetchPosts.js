@@ -17,7 +17,7 @@ const generateElement = (tag, parentNode, className) => {
 };
 
 // eslint-disable-next-line max-len
-const createCards = (postContent, postTime, username, picture, votes, postImage, memberAccount) => {
+const createCards = (postContent, postTime, username, picture, votes, postImage, postId, memberAccount) => {
   const post = generateElement('div', postsContainer, 'post-container');
   const votesContainer = generateElement('div', post, 'vote');
   const topIconBtn = generateElement('a', votesContainer, 'ele');
@@ -49,7 +49,7 @@ const createCards = (postContent, postTime, username, picture, votes, postImage,
   const commentsContainer = generateElement('div', insidePost, 'comments');
   const commentLink = generateElement('a', commentsContainer, 'ele');
   commentLink.setAttribute('id', 'show-comments');
-  commentLink.href = '/showComments';
+  commentLink.href = '/show-comments';
   commentLink.textContent = 'Comments';
   const commentIscon = generateElement('img', commentLink, 'ele');
   commentIscon.src = '../icons/comment.svg';
@@ -60,9 +60,37 @@ const createCards = (postContent, postTime, username, picture, votes, postImage,
     const delIscon = generateElement('img', deletePost, 'ele');
     delIscon.src = '../icons/remove.svg';
   }
-  // const addComment = generateElement('a', commentsContainer, 'ele');
-  // addComment.textContent='add Comment';
-  // addComment.href('/add-comment')
+  // eslint-disable-next-line no-unused-vars
+  const addComment = generateElement('button', commentsContainer, 'collapsible');
+  addComment.textContent = 'Add Comment';
+  addComment.addEventListener('click', () => {
+    addComment.classList.toggle('active');
+    const content = addComment.nextElementSibling;
+    if (content.style.display === 'block') {
+      content.style.display = 'none';
+    } else {
+      content.style.display = 'block';
+    }
+  });
+  const inputContainer = generateElement('div', commentsContainer, 'content');
+  const comment = generateElement('input', inputContainer, 'commentInput');
+  comment.placeholder = 'Enter your Comment';
+  comment.name = 'comment';
+  comment.type = 'text';
+  // eslint-disable-next-line no-undef
+  comment.addEventListener('keyup', (event) => {
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      fetch('/add-comment', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name: username, postId, comment: comment.value }),
+      });
+    }
+  });
 };
 // Create Post
 const createPosts = (array) => {
@@ -73,6 +101,7 @@ const createPosts = (array) => {
       array[i].picture,
       array[i].votes,
       array[i].post_img,
+      array[i].id,
       user === array[i].username);
   }
 };
