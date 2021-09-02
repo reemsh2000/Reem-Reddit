@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const {
   login, logout, signup, getHomePage, getIndexPage,
-  getProfileInfo, getPosts, addPost, getProfilePage, updateProfile,
+  getProfileInfo, getPosts, addPost, getProfilePage, updateProfile, addComment,
 } = require('../controllers');
 
 router.get('/', getIndexPage);
@@ -15,4 +15,5 @@ router.get('/profile/:username/info', getProfileInfo);
 router.post('/update-profile', updateProfile);
 router.get('/posts', getPosts);
 router.post('/post', addPost);
+router.post('/add-comment', addComment);
 module.exports = router;

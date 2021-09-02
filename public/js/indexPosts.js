@@ -36,13 +36,6 @@ const createCards = (postContent, postTime, username, picture, votes, postImage)
     const postImg = generateElement('img', insidePost, 'post-img');
     postImg.src = postImage;
   }
-  const commentsContainer = generateElement('div', insidePost, 'comments');
-  const commentLink = generateElement('a', commentsContainer, 'ele');
-  commentLink.setAttribute('id', 'show-comments');
-  commentLink.href = '/showComments';
-  commentLink.textContent = 'Comments';
-  const commentIscon = generateElement('img', commentLink, 'ele');
-  commentIscon.src = '../icons/comment.svg';
 };
 // Create Post
 const createPosts = (array) => {
