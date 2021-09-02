@@ -1,4 +1,6 @@
 const postsContainer = document.querySelector('#post-contain');
+const currentLocation = window.location.href;
+
 const generateElement = (tag, parentNode, className) => {
   const tagName = document.createElement(tag);
   tagName.classList.add(className);
@@ -6,8 +8,8 @@ const generateElement = (tag, parentNode, className) => {
   return tagName;
 };
 
-// eslint-disable-next-line max-len
-const createCards = (postContent, postTime, username, picture, votes, postImage, notmemberAccount) => {
+// eslint-disable-next-line no-unused-vars
+const createCards = (postContent, postTime, username, picture, votes, postImage, memberAccount) => {
   const post = generateElement('div', postsContainer, 'post-container');
   const votesContainer = generateElement('div', post, 'vote');
   const topIconBtn = generateElement('a', votesContainer, 'ele');
@@ -25,7 +27,8 @@ const createCards = (postContent, postTime, username, picture, votes, postImage,
   const userImg = generateElement('img', userInfo, 'ele');
   userImg.src = picture;
   userImg.alt = 'user image';
-  const userName = generateElement('p', userInfo, 'ele');
+  const userName = generateElement('a', userInfo, 'ele');
+  userName.href = `/profile:${username}`;
   userName.textContent = username;
   const postDate = generateElement('span', userInfo, 'ele');
   postDate.textContent = `${postTime.split('T')[0]}  ${postTime.split('T')[1].split('.')[0]}`;
@@ -42,7 +45,7 @@ const createCards = (postContent, postTime, username, picture, votes, postImage,
   commentLink.textContent = 'Comments';
   const commentIscon = generateElement('img', commentLink, 'ele');
   commentIscon.src = '../icons/comment.svg';
-  if (!notmemberAccount) {
+  if (memberAccount) {
     const deletePost = generateElement('a', commentsContainer, 'ele');
     deletePost.textContent = 'Delete Post';
     deletePost.href = '/delete-post';
@@ -53,22 +56,25 @@ const createCards = (postContent, postTime, username, picture, votes, postImage,
   // addComment.textContent='add Comment';
   // addComment.href('/add-comment')
 };
-// Create Post
-const createPosts = (array) => {
+
+const createProfilePosts = (array) => {
   for (let i = 0; i < array.length; i += 1) {
-    createCards(array[i].post_content,
-      array[i].post_time,
-      array[i].username,
-      array[i].picture,
-      array[i].votes,
-      array[i].post_img);
+    if (array[i].username === currentLocation.split(':')[3]) {
+      createCards(array[i].post_content,
+        array[i].post_time,
+        array[i].username,
+        array[i].picture,
+        array[i].votes,
+        array[i].post_img,
+        true);
+    }
   }
 };
-// Fetch posts
-const fetchPost = () => {
+
+const fetchUserPost = () => {
   fetch('/posts')
     .then((res) => res.json())
-    .then((result) => createPosts(result))
+    .then((result) => createProfilePosts(result))
     .catch((error) => error);
 };
-fetchPost();
+fetchUserPost();
