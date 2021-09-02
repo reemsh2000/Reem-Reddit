@@ -73,7 +73,7 @@ const createCards = (postContent, postTime, username, picture, votes, postImage,
     }
   });
   const inputContainer = generateElement('div', commentsContainer, 'content');
-  const comment = generateElement('input', inputContainer, 'ele');
+  const comment = generateElement('input', inputContainer, 'commentInput');
   comment.placeholder = 'Enter your Comment';
   comment.name = 'comment';
   comment.type = 'text';
