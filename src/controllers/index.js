@@ -11,6 +11,7 @@ const updateProfile = require('./updateProfile');
 const addComment = require('./addComment');
 const showComment = require('./showComment');
 const getCommentsPage = require('./getCommentsPage');
+const commentRedirect = require('./commentRedirect');
 
 module.exports = {
   getHomePage,
@@ -26,4 +27,6 @@ module.exports = {
   addComment,
   showComment,
   getCommentsPage,
+  commentRedirect,
+
 };
