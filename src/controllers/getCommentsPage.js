@@ -7,7 +7,6 @@ const getCommentsPage = (req, res) => {
       res.json({ msg: 'you are not verified' });
     } else {
       res.sendFile(join(__dirname, '..', '..', 'public', 'html', 'comments.html'));
-    //   next();
     }
   });
 };
