@@ -11,9 +11,8 @@ const login = (req, res) => {
             res.redirect('/home');
           }
         });
-      }
+      } else res.json({ msg: 'You should sign up first' });
     })
-
     .catch((error) => {
       res.json({ msg: `user not a member ${error}` });
     });
