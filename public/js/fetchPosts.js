@@ -57,7 +57,7 @@ const createCards = (postContent, postTime, username, picture, votes, postImage,
   const commentIscon = generateElement('img', commentLink, 'ele');
   commentIscon.src = '../icons/comment.svg';
   if (memberAccount) {
-    const deletePost = generateElement('button', commentsContainer, 'ele');
+    const deletePost = generateElement('a', commentsContainer, 'ele');
     deletePost.textContent = 'Delete Post';
     deletePost.onclick = () => {
       fetch(`/delete/${postId}`, {
