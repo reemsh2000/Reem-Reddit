@@ -9,7 +9,7 @@ const generateElement = (tag, parentNode, className) => {
   return tagName;
 };
 
-// eslint-disable-next-line max-len
+// eslint-disable-next-line no-shadow
 const createPost = (postContent, postTime, username, picture, votes, postImage, postId) => {
   const post = generateElement('div', postsContainer, 'post-container');
   const votesContainer = generateElement('div', post, 'vote');
@@ -57,16 +57,6 @@ const createPost = (postContent, postTime, username, picture, votes, postImage, 
       content.style.display = 'block';
     }
   };
-  const deletePost = generateElement('a', commentsContainer, 'ele');
-  deletePost.textContent = 'Delete Post';
-  deletePost.onclick = () => {
-    fetch(`/delete/${postId}`, {
-      method: 'DELETE',
-      headers: {
-        'Content-type': 'application/json',
-      },
-    });
-  };
   // eslint-disable-next-line no-undef
   comment.addEventListener('keyup', (event) => {
     // Number 13 is the "Enter" key on the keyboard
@@ -83,7 +73,7 @@ const createPost = (postContent, postTime, username, picture, votes, postImage, 
   });
 };
 // Create comment card *************************
-const createCommentCard = (commentContent, commentTime, username, picture, votes, postId) => {
+const createCommentCard = (commentContent, commentTime, username, picture, votes) => {
   const newcomment = generateElement('div', commentsConatiner, 'post-container');
   const votesContainer = generateElement('div', newcomment, 'vote');
   const topIconBtn = generateElement('a', votesContainer, 'ele');
