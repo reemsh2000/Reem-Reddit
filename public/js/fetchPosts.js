@@ -51,14 +51,8 @@ const createCards = (postContent, postTime, username, picture, votes, postImage,
   commentLink.setAttribute('id', 'show-comments');
   commentLink.textContent = 'Show Comments';
   commentLink.onclick = () => {
-    console.log('click');
-    fetch('/show-comments', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ reem: 'hii' }),
-    });
+    fetch(`/show-comments/${postId}`)
+      .then((response) => { if (response.redirected) { window.location.href = response.url; } });
   };
   const commentIscon = generateElement('img', commentLink, 'ele');
   commentIscon.src = '../icons/comment.svg';

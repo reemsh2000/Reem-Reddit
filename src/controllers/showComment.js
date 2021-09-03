@@ -1,5 +1,6 @@
 const showComment = (req, res) => {
-  console.log(req.body);
-  res.json({ msg: req.body });
+  const postId = req.params;
+  // console.log(postId)
+  res.redirect('/profile');
 };
 module.exports = showComment;
