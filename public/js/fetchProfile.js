@@ -1,12 +1,5 @@
-// eslint-disable-next-line consistent-return
+const userHref = window.location.href.split('/')[4];
 const profileInfo = document.querySelector('#profile-info');
-// eslint-disable-next-line consistent-return
-const getCookie = (name) => {
-  const value = `; ${document.cookie}`;
-  const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(';').shift();
-};
-const user = getCookie('username');
 const profileCard = ({
   email, picture, username,
 }) => {
@@ -41,7 +34,7 @@ const profileCard = ({
   submit.type = 'submit';
 };
 const fetchProfile = () => {
-  fetch(`/profile/${user}/info`)
+  fetch(`/profile/${userHref}/info`)
     .then((res) => res.json())
     .then((data) => profileCard(data))
     .catch((error) => error);
