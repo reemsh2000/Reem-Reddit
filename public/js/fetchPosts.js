@@ -47,10 +47,19 @@ const createCards = (postContent, postTime, username, picture, votes, postImage,
     postImg.src = postImage;
   }
   const commentsContainer = generateElement('div', insidePost, 'comments');
-  const commentLink = generateElement('a', commentsContainer, 'ele');
+  const commentLink = generateElement('button', commentsContainer, 'ele');
   commentLink.setAttribute('id', 'show-comments');
-  commentLink.href = '/show-comments';
   commentLink.textContent = 'Show Comments';
+  commentLink.onclick = () => {
+    console.log('click');
+    fetch('/show-comments', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ reem: 'hii' }),
+    });
+  };
   const commentIscon = generateElement('img', commentLink, 'ele');
   commentIscon.src = '../icons/comment.svg';
   if (memberAccount) {

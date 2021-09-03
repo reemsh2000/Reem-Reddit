@@ -16,5 +16,5 @@ router.post('/update-profile', updateProfile);
 router.get('/posts', getPosts);
 router.post('/post', addPost);
 router.post('/add-comment', addComment);
-router.get('/add-comment', showComment);
+router.get('/show-comments', showComment);
 module.exports = router;
