@@ -20,5 +20,5 @@ router.post('/add-comment', addComment);
 router.get('/show-comments/:postId', commentRedirect);
 router.get('/comments/:postId', getCommentsPage);
 router.get('/comment/:postId', showComment);
-router.daelete('/delete/:postId', deletePost);
+router.delete('/delete/:postId', deletePost);
 module.exports = router;

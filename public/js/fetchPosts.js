@@ -57,9 +57,16 @@ const createCards = (postContent, postTime, username, picture, votes, postImage,
   const commentIscon = generateElement('img', commentLink, 'ele');
   commentIscon.src = '../icons/comment.svg';
   if (memberAccount) {
-    const deletePost = generateElement('a', commentsContainer, 'ele');
+    const deletePost = generateElement('button', commentsContainer, 'ele');
     deletePost.textContent = 'Delete Post';
-    deletePost.href = '/delete-post';
+    deletePost.onclick = () => {
+      fetch(`/delete/${postId}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-type': 'application/json',
+        },
+      });
+    };
     const delIscon = generateElement('img', deletePost, 'ele');
     delIscon.src = '../icons/remove.svg';
   }

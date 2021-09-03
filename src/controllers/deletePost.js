@@ -6,7 +6,7 @@ const deletePost = (req, res) => {
     if (err) {
       res.json({ msg: 'you are not verified' });
     } else {
-      const { postId } = req.body;
+      const { postId } = req.params;
       deletePostQuery(postId)
         .then(() => {
           res.redirect('/home');
