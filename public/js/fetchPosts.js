@@ -50,7 +50,7 @@ const createCards = (postContent, postTime, username, picture, votes, postImage,
   const commentLink = generateElement('a', commentsContainer, 'ele');
   commentLink.setAttribute('id', 'show-comments');
   commentLink.href = '/show-comments';
-  commentLink.textContent = 'Comments';
+  commentLink.textContent = 'Show Comments';
   const commentIscon = generateElement('img', commentLink, 'ele');
   commentIscon.src = '../icons/comment.svg';
   if (memberAccount) {
@@ -63,7 +63,12 @@ const createCards = (postContent, postTime, username, picture, votes, postImage,
   // eslint-disable-next-line no-unused-vars
   const addComment = generateElement('button', commentsContainer, 'collapsible');
   addComment.textContent = 'Add Comment';
-  addComment.addEventListener('click', () => {
+  const inputContainer = generateElement('div', commentsContainer, 'content');
+  const comment = generateElement('input', inputContainer, 'commentInput');
+  comment.placeholder = 'Enter your Comment';
+  comment.name = 'comment';
+  comment.type = 'text';
+  addComment.onclick = () => {
     addComment.classList.toggle('active');
     const content = addComment.nextElementSibling;
     if (content.style.display === 'block') {
@@ -71,12 +76,8 @@ const createCards = (postContent, postTime, username, picture, votes, postImage,
     } else {
       content.style.display = 'block';
     }
-  });
-  const inputContainer = generateElement('div', commentsContainer, 'content');
-  const comment = generateElement('input', inputContainer, 'commentInput');
-  comment.placeholder = 'Enter your Comment';
-  comment.name = 'comment';
-  comment.type = 'text';
+  };
+
   // eslint-disable-next-line no-undef
   comment.addEventListener('keyup', (event) => {
     // Number 13 is the "Enter" key on the keyboard
