@@ -23,11 +23,13 @@ const profileCard = ({
   password.placeholder = 'New Password';
   password.type = 'password';
   password.name = 'newpassword';
+  password.required = true;
   // eslint-disable-next-line no-undef
   const newProfileImage = generateElement('input', buttnsContainer, 'ele');
   newProfileImage.placeholder = 'New Profile Image';
   newProfileImage.name = 'newProfileImage';
   newProfileImage.type = 'text';
+  newProfileImage.required = true;
   // eslint-disable-next-line no-undef
   const submit = generateElement('button', buttnsContainer, 'ele');
   submit.textContent = 'Update Profile';
