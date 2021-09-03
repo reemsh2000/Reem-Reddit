@@ -1,4 +1,18 @@
-const deletePost = (req, res) => {
+const { deletePostQuery } = require('../database/queies');
+const verifyLogin = require('./verifyLogin');
 
+const deletePost = (req, res) => {
+  verifyLogin(req, res, (err) => {
+    if (err) {
+      res.json({ msg: 'you are not verified' });
+    } else {
+      const { postId } = req.body;
+      deletePostQuery(postId)
+        .then(() => {
+          res.redirect('/home');
+        });
+    }
+  });
 };
+
 module.exports = deletePost;
