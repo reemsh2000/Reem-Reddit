@@ -2,7 +2,7 @@ const router = require('express').Router();
 const {
   login, logout, signup, getHomePage, getIndexPage,
   getProfileInfo, getPosts, addPost, getProfilePage, updateProfile, addComment, showComment,
-  getCommentsPage, commentRedirect,
+  getCommentsPage, commentRedirect, deletePost,
 } = require('../controllers');
 
 router.get('/', getIndexPage);
@@ -20,4 +20,5 @@ router.post('/add-comment', addComment);
 router.get('/show-comments/:postId', commentRedirect);
 router.get('/comments/:postId', getCommentsPage);
 router.get('/comment/:postId', showComment);
+router.daelete('/delete/:postId', deletePost);
 module.exports = router;

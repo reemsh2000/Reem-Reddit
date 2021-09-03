@@ -12,6 +12,7 @@ const addComment = require('./addComment');
 const showComment = require('./showComment');
 const getCommentsPage = require('./getCommentsPage');
 const commentRedirect = require('./commentRedirect');
+const deletePost = require('./deletePost');
 
 module.exports = {
   getHomePage,
@@ -28,5 +29,6 @@ module.exports = {
   showComment,
   getCommentsPage,
   commentRedirect,
+  deletePost,
 
 };
