@@ -98,10 +98,9 @@ const createCommentCard = (commentContent, commentTime, username, picture, votes
   postDate.textContent = `${commentTime.split('T')[0]}  ${commentTime.split('T')[1].split('.')[0]}`;
   const postConetnt = generateElement('p', insideComment, 'new');
   postConetnt.textContent = commentContent;
+};
 
-}
-
-  // Create Post
+// Create Post
 const createPosts = (array) => {
   for (let i = 0; i < array.length; i += 1) {
     if (array[i].id === parseInt(postId, 10)) {
