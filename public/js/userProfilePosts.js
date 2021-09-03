@@ -8,8 +8,8 @@ const generateElement = (tag, parentNode, className) => {
   return tagName;
 };
 
-// eslint-disable-next-line no-unused-vars
-const createCards = (postContent, postTime, username, picture, votes, postImage, memberAccount) => {
+// eslint-disable-next-line max-len
+const createCards = (postContent, postTime, username, picture, votes, postImage, postId, memberAccount) => {
   const post = generateElement('div', postsContainer, 'post-container');
   const votesContainer = generateElement('div', post, 'vote');
   const topIconBtn = generateElement('a', votesContainer, 'ele');
@@ -39,10 +39,14 @@ const createCards = (postContent, postTime, username, picture, votes, postImage,
     postImg.src = postImage;
   }
   const commentsContainer = generateElement('div', insidePost, 'comments');
-  const commentLink = generateElement('a', commentsContainer, 'ele');
+  const commentLink = generateElement('button', commentsContainer, 'ele');
   commentLink.setAttribute('id', 'show-comments');
-  commentLink.href = '/showComments';
   commentLink.textContent = 'Comments';
+  commentLink.onclick = () => {
+    fetch(`/show-comments/${postId}`)
+      .then((response) => { if (response.redirected) { window.location.href = response.url; } });
+  };
+
   const commentIscon = generateElement('img', commentLink, 'ele');
   commentIscon.src = '../icons/comment.svg';
   if (memberAccount) {
@@ -66,6 +70,7 @@ const createProfilePosts = (array) => {
         array[i].picture,
         array[i].votes,
         array[i].post_img,
+        array[i].id,
         true);
     }
   }

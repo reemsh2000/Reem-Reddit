@@ -9,6 +9,8 @@ const addPost = require('./addPost');
 const getProfilePage = require('./getProfilePage');
 const updateProfile = require('./updateProfile');
 const addComment = require('./addComment');
+const showComment = require('./showComment');
+const getCommentsPage = require('./getCommentsPage');
 
 module.exports = {
   getHomePage,
@@ -22,4 +24,6 @@ module.exports = {
   getProfilePage,
   updateProfile,
   addComment,
+  showComment,
+  getCommentsPage,
 };
