@@ -8,7 +8,7 @@ const generateElement = (tag, parentNode, className) => {
   return tagName;
 };
 
-// eslint-disable-next-line no-unused-vars
+// eslint-disable-next-line max-len
 const createCards = (postContent, postTime, username, picture, votes, postImage, postId, memberAccount) => {
   const post = generateElement('div', postsContainer, 'post-container');
   const votesContainer = generateElement('div', post, 'vote');
