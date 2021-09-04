@@ -23,6 +23,8 @@ As a user:
 3- npm i 
 4- npm run dev
 ```
+## Data Base Tables 
+![drawSQL-export-2021-09-04_16_26](https://user-images.githubusercontent.com/71079908/132096058-9f0e526d-b71b-43f2-a83b-06c0d426b014.png)
 
 
 ## Tech Stack : :clipboard:
