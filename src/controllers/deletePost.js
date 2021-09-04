@@ -2,10 +2,11 @@ const { deletePostQuery } = require('../database/queies');
 const verifyLogin = require('./verifyLogin');
 
 const deletePost = (req, res) => {
-  verifyLogin(req, res, (err) => {
+  verifyLogin(req, res, (err, decoded) => {
     if (err) {
       res.json({ msg: 'you are not verified' });
-    } else {
+    }
+    if (decoded === req.cookies.username) {
       const { postId } = req.params;
       deletePostQuery(postId)
         .then(() => {
