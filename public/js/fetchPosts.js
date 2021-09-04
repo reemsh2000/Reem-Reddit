@@ -66,7 +66,6 @@ const createCards = (postContent, postTime, username, picture, votes, postImage,
           'Content-type': 'application/json',
         },
       }).then((response) => { if (response.redirected) { window.location.href = response.url; } });
-      ;
     };
     const delIscon = generateElement('img', deletePost, 'ele');
     delIscon.src = '../icons/remove.svg';
