@@ -3,7 +3,9 @@
 [Demo Link](https://reemreddit.herokuapp.com/)
 
 ### About this site :heart:
-It's a simple website looks like [reddit](https://www.reddit.com/)
+
+It's a simple website looks  like [reddit](https://www.reddit.com/)
+
 
 ## User Stories :book:
 As a user:
