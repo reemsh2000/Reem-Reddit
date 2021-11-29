@@ -17,7 +17,7 @@ const createTopCards = (title, news, imgUrl) => {
   a.textContent = 'Read More';
   a.href = '/';
 };
-createTopCards('Jake Paul', 'Someone (Tyron Woolley) finally put Jake Paul in his place', 'https://th.bing.com/th/id/R.eec27d550216388b430561d06d76f143?rik=aVSv3VIADVmSTA&pid=ImgRaw&r=0');
-createTopCards('Jake Paul', 'Someone (Tyron Woolley) finally put Jake Paul in his place', 'https://th.bing.com/th/id/R.eec27d550216388b430561d06d76f143?rik=aVSv3VIADVmSTA&pid=ImgRaw&r=0');
-createTopCards('Jake Paul', 'Someone (Tyron Woolley) finally put Jake Paul in his place', 'https://th.bing.com/th/id/R.eec27d550216388b430561d06d76f143?rik=aVSv3VIADVmSTA&pid=ImgRaw&r=0');
-createTopCards('Jake Paul', 'Someone (Tyron Woolley) finally put Jake Paul in his place', 'https://th.bing.com/th/id/R.eec27d550216388b430561d06d76f143?rik=aVSv3VIADVmSTA&pid=ImgRaw&r=0');
+createTopCards('Jake Paul', 'Someone (Tyron Woolley) finally put Jake Paul in his place', 'https://s.abcnews.com/images/GMA/cry-macho-02-ht-jc-210916_1631806336745_hpMain_16x9_992.jpg');
+createTopCards('Jake Paul', 'Someone (Tyron Woolley) finally put Jake Paul in his place', 'https://s.abcnews.com/images/GMA/cry-macho-02-ht-jc-210916_1631806336745_hpMain_16x9_992.jpg');
+createTopCards('Jake Paul', 'Someone (Tyron Woolley) finally put Jake Paul in his place', 'https://s.abcnews.com/images/GMA/cry-macho-02-ht-jc-210916_1631806336745_hpMain_16x9_992.jpg');
+createTopCards('Jake Paul', 'Someone (Tyron Woolley) finally put Jake Paul in his place', 'https://s.abcnews.com/images/GMA/cry-macho-02-ht-jc-210916_1631806336745_hpMain_16x9_992.jpg');
